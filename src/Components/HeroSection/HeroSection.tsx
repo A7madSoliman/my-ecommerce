@@ -2,12 +2,7 @@ import HeroImg from "../../assets/Frame_1707481586.png";
 
 function HeroSection() {
   return (
-    <div className="relative">
-      {/* Gradient background */}
-      <div
-        className="absolute -top-28 -left-28 w-[500px] h-[500px] bg-gradient-to-tr
-        from-indigo-500/20 to-pink-500/20 rounded-full blur-[80px] -z-10 opacity-50"
-      ></div>
+    <div className=" px-6 sm:px-12 lg:px-24 py-16 ">
       <div className="flex flex-col sm:flex-row justify-between items-center">
         {/* Left side */}
         <div className="w-full md:w-1/2 space-y-8">
@@ -19,7 +14,7 @@ function HeroSection() {
               Jump start your shopping
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white leading-tight">
             We Boost the growth for{" "}
             <span className="text-blue-600 relative inline-block">
               start up to fortune 500
@@ -28,7 +23,7 @@ function HeroSection() {
             companies
             <span className="inline-block ml-2 animate-pulse">⏰</span>
           </h1>
-          <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl max-w-xl">
+          <p className="text-gray-600 text-lg md:text-xl max-w-xl dark:text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
             accusantium placeat consequatur.
           </p>

@@ -30,7 +30,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white dark:bg-gray-950 shadow-md transition-colors">
+      <nav className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
@@ -115,7 +115,7 @@ function Navbar() {
             open
               ? "max-h-96 opacity-100 pointer-events-auto"
               : "max-h-0 opacity-0 pointer-events-none"
-          } bg-white dark:bg-gray-950 shadow-sm`}
+          } bg-white dark:bg-gray-800 shadow-sm`}
         >
           <div className="flex flex-col gap-2 px-4 py-4">
             {NavbarLinks.map((link) => (
