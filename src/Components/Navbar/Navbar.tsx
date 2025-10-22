@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const NavbarLinks = [
   { name: "Home", href: "/" },
-  { name: "Products", href: "/products" },
+  { name: "Products", href: "/allproducts" },
   { name: "Categories", href: "/categories" },
   { name: "Wishlist", href: "/wishlist" },
 ];
