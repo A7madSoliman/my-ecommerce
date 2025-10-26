@@ -6,6 +6,8 @@ import AllProducts from "./Pages/AllProducts/AllProducts";
 import NotFound from "./Components/NotFound/NotFound";
 import RouterError from "./Components/RouterError/RouterError";
 import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
+import Signin from "./Pages/Signin/Signin";
+import Signup from "./Pages/Signup/Signup";
 
 function App() {
   const routes = createBrowserRouter([
@@ -30,8 +32,38 @@ function App() {
             </ErrorBoundary>
           ),
         },
-        { path: "categories", element: <h1>Categories</h1> },
-        { path: "wishlist", element: <h1>Wishlist</h1> },
+        {
+          path: "categories",
+          element: (
+            <ErrorBoundary>
+              <h1>Categories</h1>
+            </ErrorBoundary>
+          ),
+        },
+        {
+          path: "wishlist",
+          element: (
+            <ErrorBoundary>
+              <h1>Wishlist</h1>{" "}
+            </ErrorBoundary>
+          ),
+        },
+        {
+          path: "signin",
+          element: (
+            <ErrorBoundary>
+              <Signin />
+            </ErrorBoundary>
+          ),
+        },
+        {
+          path: "signup",
+          element: (
+            <ErrorBoundary>
+              <Signup />
+            </ErrorBoundary>
+          ),
+        },
         { path: "*", element: <NotFound /> },
       ],
     },
