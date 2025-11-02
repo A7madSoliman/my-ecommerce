@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Logo from "../../assets/freshcart-logo.svg";
 import { Menu, Moon, ShoppingCart, Sun, X } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const NavbarLinks = [
   { name: "Home", href: "/" },
@@ -16,6 +16,7 @@ function Navbar() {
   const [dark, setDark] = useState(
     () => localStorage.getItem("theme") === "dark"
   );
+  const navigate = useNavigate();
 
   // Sync dark mode with document and localStorage
   useEffect(() => {
@@ -27,6 +28,26 @@ function Navbar() {
       localStorage.setItem("theme", "light");
     }
   }, [dark]);
+
+  // Check if user is signed in on component mount (from localStorage, auth context, etc.)
+  useEffect(() => {
+    // You can replace this with your actual authentication check
+    const isAuthenticated = localStorage.getItem("isSignedIn") === "true";
+    setSignedIn(isAuthenticated);
+  }, []);
+
+  const handleAuthClick = () => {
+    if (signedIn) {
+      // Sign out logic
+      setSignedIn(false);
+      localStorage.setItem("isSignedIn", "false"); // Remove in real app
+      // You might want to clear tokens/user data here
+      navigate("/"); // Navigate to home after sign out
+    } else {
+      // Navigate to sign in page
+      navigate("/signin");
+    }
+  };
 
   return (
     <>
@@ -88,7 +109,7 @@ function Navbar() {
               </NavLink>
               {/* Sign in / Sign out */}
               <button
-                onClick={() => setSignedIn((v) => !v)}
+                onClick={handleAuthClick}
                 className="cursor-pointer px-4 py-2 rounded-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
               >
                 {signedIn ? "Sign out" : "Sign in"}

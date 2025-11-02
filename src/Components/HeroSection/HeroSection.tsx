@@ -18,10 +18,10 @@ function HeroSection() {
             We Boost the growth for{" "}
             <span className="text-blue-600 relative inline-block">
               start up to fortune 500
+              <span className="inline-block ml-2 animate-pulse">⏰</span>
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-200/60"></span>
             </span>{" "}
             companies
-            <span className="inline-block ml-2 animate-pulse">⏰</span>
           </h1>
           <p className="text-gray-600 text-lg md:text-xl max-w-xl dark:text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis

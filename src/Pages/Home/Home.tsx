@@ -136,7 +136,7 @@ function Home() {
         {/* Scroll down arrow button - shown on initial load */}
         <button
           onClick={scrollToProducts}
-          className="fixed bottom-16 right-6 z-40 cursor-pointer bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 transition-all duration-300 animate-bounce"
+          className="fixed bottom-16 right-6 z-40 cursor-pointer bg-blue-500 dark:bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 dark:hover:bg-blue-700 transition-all duration-300 animate-bounce"
           aria-label="Scroll to products"
         >
           <svg
@@ -158,7 +158,7 @@ function Home() {
         {showScrollTop && (
           <button
             onClick={scrollToTop}
-            className="fixed bottom-16 right-6 z-50 cursor-pointer bg-gray-800 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-gray-700 transition-all duration-300"
+            className="fixed bottom-16 right-6 z-50 cursor-pointer bg-gray-800 dark:bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-300"
             aria-label="Scroll to top"
           >
             <svg
@@ -178,11 +178,11 @@ function Home() {
         )}
 
         {error && !isLoading && (
-          <div className="error-message text-center py-8">
-            <p className="text-red-500 mb-4">{error}</p>
+          <div className="error-message text-center py-8 bg-white dark:bg-gray-800">
+            <p className="text-red-500 dark:text-red-400 mb-4">{error}</p>
             <button
               onClick={() => getAllProducts(1)}
-              className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors"
+              className="bg-blue-500 dark:bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-600 dark:hover:bg-blue-700 transition-colors"
             >
               Retry
             </button>
@@ -190,7 +190,7 @@ function Home() {
         )}
 
         {/* Added products-grid class for better targeting */}
-        <div className="products-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 p-4 sm:p-6 lg:p-8">
+        <div className="products-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 p-4 sm:p-6 lg:p-8 bg-white dark:bg-gray-900 min-h-screen">
           {products.map((product) => (
             <ProductCard
               key={product._id}
@@ -206,11 +206,11 @@ function Home() {
         </div>
 
         {hasMore && !error && (
-          <div className="text-center py-8">
+          <div className="text-center py-8 bg-white dark:bg-gray-900">
             <button
               onClick={loadMoreProducts}
               disabled={isLoadingMore}
-              className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+              className="bg-gray-800 dark:bg-gray-700 text-white px-8 py-3 rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed"
             >
               {isLoadingMore ? "Loading..." : "Load More Products"}
             </button>
